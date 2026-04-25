@@ -23,11 +23,11 @@ function PokemonModal({ close, refresh, pokemon }) {
         try {
             if (pokemon) {
                 // Update
-                await axios.put(`http://localhost:3001/api/pokemon/${pokemon._id}`, obj);
+                await axios.put(`/api/pokemon/${pokemon._id}`, obj);
                 alert("Updated!");
             } else {
                 // Create
-                await axios.post('http://localhost:3001/api/pokemon', obj);
+                await axios.post('/api/pokemon', obj);
                 alert("Added!");
             }
             refresh();

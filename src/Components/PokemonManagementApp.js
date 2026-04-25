@@ -15,7 +15,7 @@ function PokemonManagementApp() {
 
     const getPokemons = async () => {
         try {
-            const res = await axios.get('http://localhost:3001/api/pokemon');
+            const res = await axios.get('/api/pokemon');
             setPokemons(res.data);
         } catch (err) {
             console.log(err);
@@ -35,7 +35,7 @@ function PokemonManagementApp() {
     const handleDelete = async (id) => {
         if (window.confirm("Delete this?")) {
             try {
-                await axios.delete(`http://localhost:3001/api/pokemon/${id}`);
+                await axios.delete(`/api/pokemon/${id}`);
                 alert("Deleted!");
                 getPokemons();
             } catch (err) {

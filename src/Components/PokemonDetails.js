@@ -14,7 +14,7 @@ function PokemonDetails() {
 
     const fetchPokemon = async () => {
         try {
-            const res = await axios.get(`http://localhost:3001/api/pokemon/${id}`);
+            const res = await axios.get(`/api/pokemon/${id}`);
             setPokemon(res.data);
             setLoading(false);
         } catch (err) {

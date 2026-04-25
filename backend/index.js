@@ -18,6 +18,12 @@ app.get('/', (req, res) => {
     res.send('Server is running!');
 });
 
-app.listen(PORT, () => {
-    console.log(`Server started on port ${PORT}`);
-});
+// For local running
+if (require.main === module) {
+    app.listen(PORT, () => {
+        console.log(`Server started on port ${PORT}`);
+    });
+}
+
+// Export for Vercel
+module.exports = app;
